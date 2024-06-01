@@ -56,4 +56,13 @@
         height: 45px;
     }
 
+    .apply-for-div > .content {
+        flex-direction: column;
+
+        h3.section-title {
+            margin-right: 30px;
+            margin-bottom: 20px;
+        }
+    }
+
 }

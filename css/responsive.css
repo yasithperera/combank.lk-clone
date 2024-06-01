@@ -1,0 +1,51 @@
+@media screen and (max-width: 1200px) {
+
+    /*.top-nav-desktop-links-block {*/
+    /*    display: none;*/
+    /*    visibility: hidden;*/
+    /*}*/
+    #desktop-links-div {
+        display: none;
+
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-toggle-button {
+        display: block;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 680px) {
+    .flex-items {
+        display: none;
+    }
+
+    .block-drop-down-block {
+        border: none;
+    }
+
+    .digital-button {
+
+
+        p {
+            margin: 2px 20px 0 0;
+        }
+
+
+    }
+
+    .button{
+        margin-right: 20px;
+        padding: 10px 15px;
+    }
+
+    .brand-logo{
+        height: 45px;
+    }
+
+}

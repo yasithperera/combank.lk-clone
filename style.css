@@ -281,6 +281,7 @@ body {
     position: sticky;
     top: 0;
     background: white;
+    z-index: 5;/* to place this on top of others*/
 }
 
 .bottom-nav > .com-container > .nav-links > .dropdown-li > .dropdown-a {
@@ -658,6 +659,7 @@ body {
 
 .what-can-help-section {
     padding: 70px 0;
+    z-index: 1;
 }
 
 #help-section-div {
@@ -725,6 +727,21 @@ h3.section-title {
         font-size: var(--font-size-15);
         color: #000;
         width: 290px;
+
+
+    }
+
+    &:hover {
+        .box-shadow {
+            visibility: visible;
+            height: 215px;
+        }
+    }
+
+    .box-shadow > li > a {
+        &:hover {
+            color: var(--text-selected-color);
+        }
     }
 }
 
@@ -739,14 +756,22 @@ h3.section-title {
     left: 0;
     background: #fff;
     border-radius: 30px;
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
+    /*-webkit-transition: none;*/
+    /*-o-transition: none;*/
+    /*transition: none;*/
     z-index: 1;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     /*display: none;*/
 
-    li{
+    /* hiding the menu */
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    /* transition for height property */
+    transition: height 750ms;
+
+    li {
         height: 35px;
     }
 
@@ -756,6 +781,149 @@ h3.section-title {
         color: black;
         margin-bottom: 5px;
     }
+}
+
+.help-menu-frame {
+    width: 100%;
+
+    .help-menu-slide {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        margin-bottom: 25px;
+
+        .help-menu-li {
+            border-radius: 4px;
+            width: 195px;
+            height: 126.39px;
+            box-shadow: 0 8px 14px 0 rgba(10, 5, 74, .15);
+            transition: scale 500ms;
+
+            &:hover {
+                background: linear-gradient(to right, #0949a2, #095bcc);
+                scale: 95%;
+
+                .help-menu-a > span {
+                    color: white;
+                }
+
+                .help-menu-a > figure > svg {
+                    fill: white !important;
+                }
+            }
+
+            .help-menu-a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                padding: 25px 20px;
+
+                figure {
+                    margin-bottom: 15px;
+                }
+
+                span {
+                    font-size: var(--font-size-16);
+                    color: #000;
+                }
+            }
+        }
+
+    }
+}
+
+.help-content {
+    max-width: 1300px;
+    width: 1300px;
+    height: 395.328px;
+    background: #f7f8f8;
+    border-radius: 4px;
+}
+
+.help-content .content {
+    position: relative;
+    min-height: 350px;
+
+}
+
+.inner-help-content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.help-content.main-help-content .content .inner-help-content-wrapper .inner-help-content {
+    /*padding: 30px 0 0 30px;*/
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    h3 {
+        margin: 0 0 20px;
+        font-size: var(--font-size-26);
+    }
+
+    .tag-line {
+        margin-bottom: 30px;
+    }
+
+}
+
+.help-content > .content > .inner-help-content-wrapper > .bg {
+    svg {
+        height: 395.328px;
+    }
+}
+
+.inline-tab-head > .nav-tabs {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        color: var(--top-nav-font-color);
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: #fff;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.button.with-shadow {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(10, 5, 74, .15);
+    box-shadow: 0 2px 5px 0 rgba(10, 5, 74, .15);
+
+    font-size: var(--font-size-14);
+}
+
+.button.yellow {
+    font-weight: 600;
+    background: -webkit-gradient(linear, left top, right top, from(#f9d022), to(#fae34c));
+    background: -o-linear-gradient(left, #f9d022, #fae34c);
+    background: linear-gradient(to right, #f9d022, #fae34c);
+}
+
+a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    outline: 0;
 }
 
 
